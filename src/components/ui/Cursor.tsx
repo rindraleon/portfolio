@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from "react"
 
 export function Cursor() {
   const dot = useRef<HTMLDivElement>(null)
@@ -9,13 +9,15 @@ export function Cursor() {
   const [hovering, setHovering] = useState(false)
 
   useEffect(() => {
-    const onMove = (e: MouseEvent) => { pos.current = { x: e.clientX, y: e.clientY } }
+    const onMove = (e: MouseEvent) => {
+      pos.current = { x: e.clientX, y: e.clientY }
+    }
     const onEnter = (e: MouseEvent) => {
       const t = e.target as HTMLElement
-      setHovering(!!(t.closest('a, button, [data-cursor-hover]')))
+      setHovering(!!t.closest("a, button, [data-cursor-hover]"))
     }
-    window.addEventListener('mousemove', onMove)
-    window.addEventListener('mouseover', onEnter)
+    window.addEventListener("mousemove", onMove)
+    window.addEventListener("mouseover", onEnter)
 
     const animate = () => {
       ringPos.current.x += (pos.current.x - ringPos.current.x) * 0.12
@@ -30,8 +32,8 @@ export function Cursor() {
     }
     raf.current = requestAnimationFrame(animate)
     return () => {
-      window.removeEventListener('mousemove', onMove)
-      window.removeEventListener('mouseover', onEnter)
+      window.removeEventListener("mousemove", onMove)
+      window.removeEventListener("mouseover", onEnter)
       cancelAnimationFrame(raf.current)
     }
   }, [])
@@ -42,21 +44,27 @@ export function Cursor() {
         ref={dot}
         className="fixed top-0 left-0 z-[9999] pointer-events-none transition-transform duration-0"
         style={{
-          width: 8, height: 8,
-          borderRadius: '50%',
-          background: hovering ? '#0055ff' : '#b6c4ff',
-          transition: 'background 0.3s',
+          width: 8,
+          height: 8,
+          borderRadius: "50%",
+          background: hovering ? "#0055ff" : "#b6c4ff",
+          transition: "background 0.3s",
         }}
       />
       <div
         ref={ring}
         className="fixed top-0 left-0 z-[9998] pointer-events-none"
         style={{
-          width: 40, height: 40,
-          borderRadius: '50%',
-          border: `1px solid ${hovering ? 'rgba(0,85,255,0.6)' : 'rgba(182,196,255,0.3)'}`,
-          transition: 'border-color 0.3s, width 0.3s, height 0.3s',
-          ...(hovering ? { width: 56, height: 56, marginLeft: -8, marginTop: -8 } : {}),
+          width: 40,
+          height: 40,
+          borderRadius: "50%",
+          border: `1px solid ${
+            hovering ? "rgba(0,85,255,0.6)" : "rgba(182,196,255,0.3)"
+          }`,
+          transition: "border-color 0.3s, width 0.3s, height 0.3s",
+          ...(hovering
+            ? { width: 56, height: 56, marginLeft: -8, marginTop: -8 }
+            : {}),
         }}
       />
     </>
