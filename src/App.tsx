@@ -1,4 +1,5 @@
 import { Cursor } from '@/components/ui/Cursor'
+import { SEO } from '@/components/ui/SEO'
 import { Nav } from '@/components/sections/Nav'
 import { Hero } from '@/components/sections/Hero'
 import { Clients } from '@/components/sections/Clients'
@@ -18,6 +19,7 @@ export default function App() {
 
   return (
     <div style={{ background: '#0a0a0a', minHeight: '100vh', cursor: 'none' }}>
+      <SEO />
       <Cursor />
       <Nav scrollY={scrollY} />
       <Hero />
