@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from "react"
 
 export function useFadeIn(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null)
@@ -7,8 +7,13 @@ export function useFadeIn(threshold = 0.15) {
     const el = ref.current
     if (!el) return
     const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setVisible(true); obs.disconnect() } },
-      { threshold }
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true)
+          obs.disconnect()
+        }
+      },
+      { threshold },
     )
     obs.observe(el)
     return () => obs.disconnect()
@@ -20,8 +25,8 @@ export function useScrollY() {
   const [y, setY] = useState(0)
   useEffect(() => {
     const h = () => setY(window.scrollY)
-    window.addEventListener('scroll', h, { passive: true })
-    return () => window.removeEventListener('scroll', h)
+    window.addEventListener("scroll", h, { passive: true })
+    return () => window.removeEventListener("scroll", h)
   }, [])
   return y
 }
