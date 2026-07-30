@@ -15,8 +15,8 @@ export function TeamRow({ name, role }: { name: string; role: string }) {
         cursor: 'default',
       }}
     >
-      <span style={{ fontFamily: '"Playfair Display", serif', fontWeight: 600, fontSize: 17, color: hovered ? '#e5e2e1' : '#c3c5d9', transition: 'color 0.3s' }}>{name}</span>
-      <span style={{ fontFamily: 'Inter, sans-serif', fontSize: 11, fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#a1a1aa' }}>{role}</span>
+      <span style={{ fontFamily: '"Playfair Display", serif', fontWeight: 600, fontSize: 17, color: hovered ? '#e5e2e1' : '#c3c5d9', transition: 'color 0.3s', textAlign: 'justify' }}>{name}</span>
+      <span style={{ fontFamily: 'Inter, sans-serif', fontSize: 11, fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#a1a1aa', textAlign: 'justify' }}>{role}</span>
     </div>
   )
 }

@@ -6,9 +6,9 @@ export function Footer() {
       <div style={{ maxWidth: 1440, margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
         <div>
           <div style={{ fontFamily: '"Playfair Display", serif', fontWeight: 600, fontSize: 16, color: '#fff' }}>
-            Lumina<span style={{ background: 'linear-gradient(135deg,#b6c4ff,#d0bcff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Noir</span>
+            Rindra<span style={{ background: 'linear-gradient(135deg,#b6c4ff,#d0bcff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Leon</span>
           </div>
-          <div style={{ fontFamily: 'Inter, sans-serif', fontSize: 11, color: '#434656', marginTop: 4 }}>© 2024 Lumina Noir Studio GmbH. All rights reserved.</div>
+          <div style={{ fontFamily: 'Inter, sans-serif', fontSize: 11, color: '#434656', marginTop: 4 }}>© 2024 Rindra Leon. Tous droits réservés.</div>
         </div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 32 }}>
           {FOOTER_LINKS.map(link => (

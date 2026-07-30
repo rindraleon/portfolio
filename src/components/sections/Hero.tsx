@@ -39,7 +39,7 @@ export function Hero() {
           style={{ opacity: phase >= 1 ? 1 : 0, transform: phase >= 1 ? 'none' : 'translateY(16px)' }}>
           <span className="w-8 h-px" style={{ background: '#b6c4ff' }} />
           <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.24em', textTransform: 'uppercase', color: '#b6c4ff' }}>
-            Creative Studio — Est. 2018
+            Développeur Full Stack
           </span>
         </div>
 
@@ -55,24 +55,24 @@ export function Hero() {
             transitionDelay: '80ms',
           }}
         >
-          We design<br />
+          Nous concevons<br />
           <em className="not-italic" style={{ background: 'linear-gradient(135deg,#b6c4ff 0%,#d0bcff 60%,#ffb5a0 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-            presence.
+            la présence.
           </em>
         </h1>
 
         {/* Body + CTAs */}
         <div className="flex flex-col md:flex-row md:items-end gap-8 md:gap-16 transition-all duration-700"
           style={{ opacity: phase >= 3 ? 1 : 0, transform: phase >= 3 ? 'none' : 'translateY(16px)', transitionDelay: '80ms' }}>
-          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '18px', lineHeight: 1.6, letterSpacing: '0.01em', color: '#a1a1aa', maxWidth: 420 }}>
-            Lumina Noir is an independent creative studio working at the intersection of brand, digital, and culture. We build identities that endure.
+          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '18px', lineHeight: 1.6, letterSpacing: '0.01em', color: '#a1a1aa', maxWidth: 420, textAlign: 'justify' }}>
+            Développeur passionné spécialisé dans la création d'applications web et mobiles. Je transforme vos idées en solutions numériques performantes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <PrimaryButton href="#work">
-              View Work
+              Voir les Projets
               <ArrowRight />
             </PrimaryButton>
-            <GhostButton href="#studio">Our Studio</GhostButton>
+            <GhostButton href="#studio">Notre Studio</GhostButton>
           </div>
         </div>
 

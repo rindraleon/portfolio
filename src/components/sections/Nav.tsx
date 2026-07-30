@@ -17,8 +17,8 @@ export function Nav({ scrollY }: { scrollY: number }) {
       }}
     >
       <div className="mx-auto px-6 md:px-20 max-w-[1440px] flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="font-display text-lg font-semibold tracking-tight text-white select-none">
-          Lumina<span style={{ background: 'linear-gradient(135deg,#b6c4ff,#d0bcff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Noir</span>
+        <a href="#" className="font-display text-lg font-semibold tracking-tight text-white select-none" style={{ textAlign: 'justify' }}>
+          RINDRA<span style={{ background: 'linear-gradient(135deg,#b6c4ff,#d0bcff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Léon</span>
         </a>
 
         <nav className="hidden md:flex items-center gap-10">
@@ -27,7 +27,7 @@ export function Nav({ scrollY }: { scrollY: number }) {
               key={link}
               href={`#${link.toLowerCase()}`}
               className="font-body text-[11px] font-semibold tracking-[0.22em] uppercase transition-colors duration-300"
-              style={{ color: '#a1a1aa', fontFamily: 'Inter, sans-serif' }}
+              style={{ color: '#a1a1aa', fontFamily: 'Inter, sans-serif', textAlign: 'justify' }}
               onMouseEnter={e => (e.currentTarget.style.color = '#e5e2e1')}
               onMouseLeave={e => (e.currentTarget.style.color = '#a1a1aa')}
             >
@@ -39,11 +39,11 @@ export function Nav({ scrollY }: { scrollY: number }) {
         <a
           href="#contact"
           className="hidden md:inline-flex items-center gap-2 px-5 py-2 text-[11px] font-semibold tracking-[0.22em] uppercase text-white transition-all duration-300"
-          style={{ border: '1px solid rgba(255,255,255,0.18)', borderRadius: '4px', fontFamily: 'Inter, sans-serif' }}
+          style={{ border: '1px solid rgba(255,255,255,0.18)', borderRadius: '4px', fontFamily: 'Inter, sans-serif', textAlign: 'justify' }}
           onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,1)'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)' }}
           onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.18)'; e.currentTarget.style.background = 'transparent' }}
         >
-          Start a Project
+          Démarrer un Projet
         </a>
 
         <button className="md:hidden flex flex-col gap-1.5 p-2" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
@@ -61,7 +61,7 @@ export function Nav({ scrollY }: { scrollY: number }) {
           {NAV_LINKS.map((link) => (
             <a key={link} href={`#${link.toLowerCase()}`} onClick={() => setMenuOpen(false)}
               className="text-[11px] font-semibold tracking-[0.22em] uppercase py-3 transition-colors duration-300"
-              style={{ color: '#a1a1aa', borderBottom: '1px solid rgba(255,255,255,0.05)', fontFamily: 'Inter, sans-serif' }}>
+              style={{ color: '#a1a1aa', borderBottom: '1px solid rgba(255,255,255,0.05)', fontFamily: 'Inter, sans-serif', textAlign: 'justify' }}>
               {link}
             </a>
           ))}

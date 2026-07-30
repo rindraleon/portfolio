@@ -36,7 +36,7 @@ export function ProjectCard({ project, aspectRatio }: { project: { id: number; t
             fontFamily: '"Playfair Display", serif', fontWeight: 600, color: '#fff',
             fontSize: 'clamp(18px,2.2vw,26px)', letterSpacing: '-0.01em',
             transform: hovered ? 'translateY(0)' : 'translateY(4px)',
-            transition: 'transform 0.35s ease',
+            transition: 'transform 0.35s ease', textAlign: 'justify',
           }}>{project.title}</h3>
           <div style={{
             display: 'flex', justifyContent: 'space-between', marginTop: 6,

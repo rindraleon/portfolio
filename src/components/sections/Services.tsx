@@ -13,12 +13,12 @@ export function Services() {
 
           <Fade style={{ gridColumn: 'span 12' }} className="md:[grid-column:span_4]">
             <div style={{ position: 'sticky', top: 112 }}>
-              <Label color="#b6c4ff">What We Do</Label>
+              <Label color="#b6c4ff">Mes Services</Label>
               <h2 style={{ fontFamily: '"Playfair Display", serif', fontWeight: 700, fontSize: 'clamp(30px,3.5vw,46px)', letterSpacing: '-0.02em', lineHeight: 1.2, color: '#fff', marginTop: 16, marginBottom: 20 }}>
-                Five disciplines,<br />one vision.
+                Cinq expertises,<br />un engagement.
               </h2>
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 16, lineHeight: 1.6, color: '#a1a1aa' }}>
-                We don't do everything. We do the things we're exceptional at, and we do them in service of making your brand impossible to ignore.
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 16, lineHeight: 1.6, color: '#a1a1aa', textAlign: 'justify' }}>
+                Je me concentre sur les technologies que je maîtrise pour vous offrir des solutions de qualité, performantes et maintenables.
               </p>
             </div>
           </Fade>

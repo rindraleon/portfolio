@@ -8,9 +8,9 @@ export function Process() {
     <section style={{ padding: 'clamp(80px,10vw,160px) 0', background: '#0e0e0e' }}>
       <div className="px-6 md:px-20 max-w-[1440px] mx-auto">
         <Fade className="text-center mb-20">
-          <Label color="#b6c4ff" center>How We Work</Label>
+          <Label color="#b6c4ff" center>Notre Méthode</Label>
           <h2 style={{ fontFamily: '"Playfair Display", serif', fontWeight: 700, fontSize: 'clamp(30px,4vw,48px)', letterSpacing: '-0.02em', color: '#fff', marginTop: 16 }}>
-            Process as craft.
+            Le processus comme art.
           </h2>
         </Fade>
 

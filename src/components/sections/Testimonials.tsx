@@ -17,9 +17,9 @@ export function Testimonials() {
     <section style={{ padding: 'clamp(80px,10vw,160px) 0', background: '#0a0a0a' }}>
       <div className="px-6 md:px-20 max-w-[1440px] mx-auto">
         <Fade className="text-center mb-16">
-          <Label color="#b6c4ff" center>Client Voices</Label>
+          <Label color="#b6c4ff" center>Voix des Clients</Label>
           <h2 style={{ fontFamily: '"Playfair Display", serif', fontWeight: 700, fontSize: 'clamp(30px,4vw,48px)', letterSpacing: '-0.02em', color: '#fff', marginTop: 16 }}>
-            What they say.
+            Ce qu'ils disent.
           </h2>
         </Fade>
 
@@ -31,7 +31,7 @@ export function Testimonials() {
               style={{
                 fontFamily: '"Playfair Display", serif', fontStyle: 'italic',
                 fontSize: 'clamp(20px,2.5vw,28px)', lineHeight: 1.5, color: '#e5e2e1',
-                letterSpacing: '-0.01em',
+                letterSpacing: '-0.01em', textAlign: 'justify',
                 animation: 'fadeUp 0.5s ease forwards',
               }}
             >

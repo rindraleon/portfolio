@@ -16,16 +16,16 @@ export function CTABand() {
           {/* Glow */}
           <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: 800, height: 400, background: 'radial-gradient(ellipse, rgba(0,85,255,0.1) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
-            <Label color="#b6c4ff" center>Ready?</Label>
+            <Label color="#b6c4ff" center>Prêt ?</Label>
             <h2 style={{ fontFamily: '"Playfair Display", serif', fontWeight: 700, fontSize: 'clamp(36px,5.5vw,68px)', letterSpacing: '-0.02em', lineHeight: 1.08, color: '#fff', margin: '16px 0 24px' }}>
-              Let's build something<br />
-              <em className="not-italic" style={{ background: 'linear-gradient(135deg,#b6c4ff,#d0bcff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>worth remembering.</em>
+              Construisons quelque chose<br />
+              <em className="not-italic" style={{ background: 'linear-gradient(135deg,#b6c4ff,#d0bcff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>de performant.</em>
             </h2>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 16, lineHeight: 1.6, color: '#a1a1aa', maxWidth: 440, margin: '0 auto 48px' }}>
-              We take on six new client relationships per year. If you have something worth doing, we would like to hear about it.
-            </p>
+             <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 16, lineHeight: 1.6, color: '#a1a1aa', maxWidth: 440, margin: '0 auto 48px', textAlign: 'justify' }}>
+               Je suis disponible pour des projets de développement web et mobile. Si vous avez un projet en tête, discutons-en.
+             </p>
             <PrimaryButton href="#contact">
-              Start a Conversation <ArrowRight />
+              Démarrer une Conversation <ArrowRight />
             </PrimaryButton>
           </div>
         </div>

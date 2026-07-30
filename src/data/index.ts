@@ -1,95 +1,193 @@
-export const NAV_LINKS = ['Work', 'Studio', 'Services', 'Contact']
+export const NAV_LINKS = ['Projets', 'À propos', 'Services', 'Contact']
 
 export const PROJECTS = [
   {
-    id: 1, title: 'Obsidian Identity', category: 'Brand Strategy', year: '2024',
-    tags: ['Branding', 'Visual Identity'],
-    img: 'https://images.unsplash.com/photo-1702479744181-2d6b58941583?w=900&h=600&fit=crop&auto=format',
+    id: 1,
+    title: 'ESSG Website',
+    category: 'Développement Web',
+    year: '2026',
+    tags: ['TypeScript', 'Site Web'],
+    img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&h=600&fit=crop&auto=format',
+    url: 'https://github.com/rindraleon/essg-website',
   },
   {
-    id: 2, title: 'Velvet Touch', category: 'Art Direction', year: '2024',
-    tags: ['Photography', 'Campaign'],
-    img: 'https://images.unsplash.com/photo-1780145705554-87f849702c4b?w=700&h=900&fit=crop&auto=format',
+    id: 2,
+    title: 'Backend ESSG',
+    category: 'API & Backend',
+    year: '2026',
+    tags: ['TypeScript', 'Backend'],
+    img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&h=900&fit=crop&auto=format',
+    url: 'https://github.com/rindraleon/backend-essg',
   },
   {
-    id: 3, title: 'Void Architecture', category: 'Digital Experience', year: '2023',
-    tags: ['Web', 'Motion'],
-    img: 'https://images.unsplash.com/photo-1507491910083-29fad9a7778e?w=700&h=500&fit=crop&auto=format',
+    id: 3,
+    title: 'E-Commerce Platform',
+    category: 'Application Web',
+    year: '2026',
+    tags: ['TypeScript', 'E-Commerce'],
+    img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&h=500&fit=crop&auto=format',
+    url: 'https://github.com/rindraleon/e-commerce',
   },
   {
-    id: 4, title: 'Neon Residue', category: 'Editorial Design', year: '2023',
-    tags: ['Print', 'Typography'],
-    img: 'https://images.unsplash.com/photo-1563089145-599997674d42?w=700&h=500&fit=crop&auto=format',
+    id: 4,
+    title: 'Antsan\'ny Fitia',
+    category: 'Application Mobile',
+    year: '2026',
+    tags: ['Dart', 'Flutter'],
+    img: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=700&h=500&fit=crop&auto=format',
+    url: 'https://github.com/rindraleon/Antsan-ny-fitia',
   },
   {
-    id: 5, title: 'Flux Studio', category: 'Brand Identity', year: '2024',
-    tags: ['Branding', 'Packaging'],
-    img: 'https://images.unsplash.com/photo-1637825891028-564f672aa42c?w=700&h=500&fit=crop&auto=format',
+    id: 5,
+    title: 'Ny Tahirinay',
+    category: 'Application Mobile',
+    year: '2026',
+    tags: ['Dart', 'Flutter', 'Gestion'],
+    img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=500&fit=crop&auto=format',
+    url: 'https://github.com/rindraleon/Ny-tahirinay',
+  },
+  {
+    id: 6,
+    title: 'Ny Paroasinay',
+    category: 'Application Mobile',
+    year: '2026',
+    tags: ['Dart', 'Flutter', 'Budget'],
+    img: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=700&h=500&fit=crop&auto=format',
+    url: 'https://github.com/rindraleon/ny-paroasinay',
+  },
+  {
+    id: 7,
+    title: 'Fanambi Connect',
+    category: 'Application Web',
+    year: '2025',
+    tags: ['TypeScript', 'Intégration'],
+    img: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=900&h=600&fit=crop&auto=format',
+    url: 'https://github.com/rindraleon/fanambi-connect',
+  },
+  {
+    id: 8,
+    title: 'Antsan\'ny Fitia Lyrics',
+    category: 'Application Web',
+    year: '2026',
+    tags: ['TypeScript', 'Chorale'],
+    img: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=700&h=500&fit=crop&auto=format',
+    url: 'https://github.com/rindraleon/Antsan-ny-fitia-lyrics',
+  },
+  {
+    id: 9,
+    title: 'Cantine scolaire',
+    category: 'Application Web',
+    year: '2025',
+    tags: ['TypeScript', 'Application Web'],
+    img: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&h=900&fit=crop&auto=format',
+    url: 'https://github.com/rindraleon/frontend-cantine',
+  },
+  {
+    id: 10,
+    title: 'Backend Cantine SFA',
+    category: 'API & Backend',
+    year: '2025',
+    tags: ['TypeScript', 'Backend'],
+    img: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=700&h=900&fit=crop&auto=format',
+    url: 'https://github.com/rindraleon/backend-cantine',
   },
 ]
 
 export const SERVICES = [
-  { num: '01', name: 'Brand Strategy', desc: 'Positioning, naming, and narrative systems that give organizations a reason to exist and a language to exist in.' },
-  { num: '02', name: 'Visual Identity', desc: 'Marks, typographic systems, color theory, and the full vocabulary of visual expression — built to last decades.' },
-  { num: '03', name: 'Digital Experience', desc: 'Websites, applications, and interactive installations that treat the browser as a stage, not a brochure.' },
-  { num: '04', name: 'Art Direction', desc: 'Photography, film, and campaign production led with a singular editorial vision from concept to final frame.' },
-  { num: '05', name: 'Motion & Film', desc: 'Title sequences, brand films, and motion systems that animate identity with restraint and intention.' },
+  {
+    num: '01',
+    name: 'Développement Web',
+    desc: 'Sites web modernes et applications web avec TypeScript, React et les technologies les plus récentes.',
+  },
+  {
+    num: '02',
+    name: 'Applications Mobiles',
+    desc: 'Applications iOS et Android cross-platform avec Flutter et Dart pour une expérience native.',
+  },
+  {
+    num: '03',
+    name: 'Backend & API',
+    desc: 'Architecture backend robuste, APIs RESTful et services cloud scalables.',
+  },
+  {
+    num: '04',
+    name: 'E-Commerce',
+    desc: 'Plateformes e-commerce complètes avec paiement sécurisé et gestion des produits.',
+  },
+  {
+    num: '05',
+    name: 'Applications Métier',
+    desc: 'Solutions logicielles sur mesure pour la gestion, la comptabilité et les besoins spécifiques.',
+  },
 ]
 
 export const TESTIMONIALS = [
   {
-    quote: "Lumina Noir didn't just redesign our brand — they redefined how we see ourselves. The work was technically flawless and conceptually bold.",
-    author: 'Maren Lüdke', role: 'CEO, Maison Valois',
-    img: 'https://images.unsplash.com/photo-1770062421988-7929b4748e29?w=200&h=200&fit=crop&auto=format',
+    quote: "Rindra a développé notre site web avec professionnalisme et réactivité. Le résultat est exactement ce que nous attendions.",
+    author: 'ESSG Team',
+    role: 'Université de Fianarantsoa',
+    img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=200&h=200&fit=crop&auto=format',
   },
   {
-    quote: "We had worked with four agencies before. Lumina Noir is categorically different. They listen first, then design. The result speaks for itself.",
-    author: 'James Okafor', role: 'Founder, Celeste Group',
-    img: 'https://images.unsplash.com/photo-1770070553064-3980a912f96b?w=200&h=200&fit=crop&auto=format',
+    quote: "Excellente maîtrise de Flutter et Dart. L'application mobile commandée fonctionne parfaitement.",
+    author: 'Association Ny Tahirinay',
+    role: 'Client Mobile',
+    img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=200&h=200&fit=crop&auto=format',
   },
   {
-    quote: "The restraint they bring is rare. Every decision felt considered. Nothing wasted, nothing missing. Our conversion rate increased 40% in three months.",
-    author: 'Yuki Tanaka', role: 'CMO, Orion Labs',
-    img: 'https://images.unsplash.com/photo-1532170579297-281918c8ae72?w=200&h=200&fit=crop&auto=format',
+    quote: "Un développeur talentueux qui comprend les besoins métiers et livre des solutions de qualité.",
+    author: 'Client E-Commerce',
+    role: 'Projet Commercial',
+    img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=200&h=200&fit=crop&auto=format',
   },
 ]
 
-export const CLIENTS = ['Maison Valois', 'Celeste Group', 'Arkwright & Co.', 'Studio Fen', 'Verdant Capital', 'Orion Labs']
+export const CLIENTS = ['ESSG', 'Ny Tahirinay', 'Antsan\'ny Fitia', 'Cantine SFA', 'Blu Azur']
 
 export const AWARDS = [
-  { title: 'Cannes Lions Gold', cat: 'Brand Identity', year: '2024' },
-  { title: 'D&AD Pencil', cat: 'Digital Design', year: '2024' },
-  { title: 'Webby Award', cat: 'Best Agency Site', year: '2023' },
-  { title: 'Brand Impact', cat: 'Grand Prix', year: '2023' },
-  { title: 'Cannes Lions Silver', cat: 'Motion Design', year: '2023' },
-  { title: 'TDC Certificate', cat: 'Typography', year: '2022' },
+  { title: '11 Dépôts Publics', cat: 'GitHub', year: '2026' },
+  { title: 'Projets Variés', cat: 'Web, Mobile, Backend', year: '2026' },
+  { title: 'Contributeur Actif', cat: 'Open Source', year: '2025' },
 ]
 
 export const TEAM = [
-  { name: 'Elena Voss', role: 'Creative Director' },
-  { name: 'Marcus Ihejirika', role: 'Strategy & Positioning' },
-  { name: 'Soo-Jin Park', role: 'Digital Lead' },
-  { name: 'Théo Blanchard', role: 'Art Direction' },
+  { name: 'Rindra', role: 'Développeur Full Stack' },
 ]
 
 export const PROCESS_STEPS = [
-  { num: '1', title: 'Discovery', desc: 'Deep research into your market, audience, and competitive landscape. We find what is unsaid.' },
-  { num: '2', title: 'Strategy', desc: 'Positioning, naming, narrative — the intellectual scaffolding everything else stands on.' },
-  { num: '3', title: 'Design', desc: 'Translating strategy into form. Marks, systems, spaces, interactions — built with precision.' },
-  { num: '4', title: 'Launch', desc: 'Careful deployment with detailed guidelines so the work lives correctly in the world.' },
+  {
+    num: '1',
+    title: 'Analyse des Besoins',
+    desc: 'Comprendre votre projet, vos objectifs et les fonctionnalités nécessaires.',
+  },
+  {
+    num: '2',
+    title: 'Architecture',
+    desc: 'Conception de l\'architecture technique et choix des technologies adaptées.',
+  },
+  {
+    num: '3',
+    title: 'Développement',
+    desc: 'Codage avec les meilleures pratiques, tests et documentation.',
+  },
+  {
+    num: '4',
+    title: 'Déploiement',
+    desc: 'Mise en production, formation et support continu.',
+  },
 ]
 
 export const CONTACT_INFO = [
-  { label: 'Email', value: 'hello@luminanoir.studio' },
-  { label: 'Location', value: 'Berlin, DE — New York, NY' },
-  { label: 'New Clients', value: 'Accepting in Q3 2024' },
+  { label: 'Email', value: 'rindra@example.com' },
+  { label: 'GitHub', value: 'github.com/rindraleon' },
+  { label: 'Localisation', value: 'Madagascar' },
 ]
 
 export const HERO_STATS = [
-  { val: '120+', label: 'Projects Delivered' },
-  { val: '6', label: 'Years of Practice' },
-  { val: '38', label: 'International Clients' },
-  { val: '4', label: 'Cannes Lions' },
+  { val: '11+', label: 'Projets GitHub' },
+  { val: '3+', label: 'Années d\'Expérience' },
+  { val: '5+', label: 'Langages Maîtrisés' },
+  { val: '100%', label: 'Projets Livrés' },
 ]
 
-export const FOOTER_LINKS = ['Instagram', 'LinkedIn', 'Dribbble', 'Privacy']
+export const FOOTER_LINKS = ['GitHub', 'LinkedIn', 'Email', 'Confidentialité']
