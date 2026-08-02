@@ -97,8 +97,9 @@ export function Studio() {
                   background: "#1c1b1b",
                 }}
               >
-                <img src="/portfolio.png"
-                  alt="Profil"
+                <img
+                  src="https://photos.app.goo.gl/VC2wVitbvw1LBPhM6"
+                  alt="Photo de profil"
                   style={{
                     width: "100%",
                     height: "100%",
