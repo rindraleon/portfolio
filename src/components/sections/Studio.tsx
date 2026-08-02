@@ -97,9 +97,8 @@ export function Studio() {
                   background: "#1c1b1b",
                 }}
               >
-                <img
-                  src="https://github.com/rindraleon.png"
-                  alt="Photo de profil GitHub"
+                <img src="/portfolio.png"
+                  alt="Profil"
                   style={{
                     width: "100%",
                     height: "100%",
