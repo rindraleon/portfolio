@@ -98,7 +98,7 @@ export function Studio() {
                 }}
               >
                 <img
-                  src="https://photos.app.goo.gl/VC2wVitbvw1LBPhM6"
+                  src="https://drive.google.com/file/d/1Do0AcwOiMFZ4KGch2Uv5uCoDL6NAdlDr/view?usp=sharing"
                   alt="Photo de profil"
                   style={{
                     width: "100%",
