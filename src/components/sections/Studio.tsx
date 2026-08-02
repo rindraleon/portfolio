@@ -98,8 +98,8 @@ export function Studio() {
                 }}
               >
                 <img
-                  src="https://drive.google.com/file/d/1Do0AcwOiMFZ4KGch2Uv5uCoDL6NAdlDr/view?usp=sharing"
-                  alt="Photo de profil"
+                  src="https://raw.githubusercontent.com/rindraleon/profil/main/portfolio.png"
+                  alt="Profil"
                   style={{
                     width: "100%",
                     height: "100%",
