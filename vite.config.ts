@@ -7,8 +7,10 @@ import tailwindcss from "@tailwindcss/vite"
 import path from "node:path"
 
 export default defineConfig(() => {
+  const base = process.env.VITE_BASE || "/"
+
   return {
-    base: "/portfolio/",
+    base,
 
     build: {
       sourcemap: false,

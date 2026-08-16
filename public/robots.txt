@@ -3,7 +3,7 @@ Allow: /
 Disallow: /api/
 Disallow: /private/
 
-Sitemap: https://rindraleon.github.io/portfolio/sitemap.xml
+Sitemap: https://rindraleon.dev/sitemap.xml
 
 User-agent: Googlebot
 Allow: /

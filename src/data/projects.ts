@@ -31,7 +31,7 @@ interface Curation {
 }
 
 const CURATION: Record<string, Curation> = {
-  "back-essg-website": {
+  "essg-website": {
     stack: "React",
     role: "Développement Frontend",
     features: [

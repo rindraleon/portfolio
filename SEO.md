@@ -7,7 +7,7 @@ Documentation du référencement du portfolio.
 - Langue française définie (`lang="fr"`)
 - Titre et description personnalisés : « Rindra Léon — Développeur Frontend & Full-stack »
 - Mots-clés, auteur, `theme-color`
-- Canonical URL : `https://rindraleon.github.io/portfolio/`
+- Canonical URL : `https://rindraleon.dev/`
 - `robots` : `index, follow`
 
 ## Open Graph / Facebook & Twitter Cards
@@ -38,8 +38,8 @@ Documentation du référencement du portfolio.
 
 ## Déploiement
 
-- Hébergé sur GitHub Pages : `https://rindraleon.github.io/portfolio/`
-- `base: "/portfolio/"` configuré dans `vite.config.ts` (chemins des assets corrects)
+- Hébergé sur Vercel : `https://rindraleon.dev/`
+- `base` géré dynamiquement : `/` par défaut (Vercel), `/portfolio/` via `VITE_BASE` (GitHub Pages)
 - Workflow `.github/workflows/deploy.yml` (build Vite + `deploy-pages`)
 
 ## À faire (facultatif)

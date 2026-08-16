@@ -11,8 +11,8 @@ interface SEOProps {
 export function SEO({
   title = "Rindra Léon — Développeur Frontend & Full-stack | Portfolio",
   description = "Portfolio de Rindra Léon, développeur frontend et full-stack basé à Madagascar. Applications web et mobiles modernes en TypeScript, React, Angular et Flutter.",
-  image = "https://rindraleon.github.io/portfolio/og-image.jpg",
-  url = "https://rindraleon.github.io/portfolio/",
+  image = "https://rindraleon.dev/og-image.jpg",
+  url = "https://rindraleon.dev/",
   type = "website",
 }: SEOProps) {
   useEffect(() => {
