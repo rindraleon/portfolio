@@ -1,4 +1,4 @@
-import { AWARDS } from "@/data"
+import { HIGHLIGHTS } from "@/data"
 
 import { Fade } from "@/components/ui/Fade"
 
@@ -14,7 +14,7 @@ export function Awards() {
       <div className="px-6 md:px-20 max-w-[1440px] mx-auto">
         <Fade className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div>
-            <Label color="#b6c4ff">Reconnaissance</Label>
+            <Label color="#b6c4ff">En bref</Label>
             <h2
               style={{
                 fontFamily: '"Playfair Display", serif',
@@ -26,9 +26,9 @@ export function Awards() {
                 marginTop: 16,
               }}
             >
-              Le travail
+              Quelques chiffres
               <br />
-              est remarqué.
+              sur mon travail.
             </h2>
           </div>
           <p
@@ -38,11 +38,10 @@ export function Awards() {
               lineHeight: 1.6,
               color: "#a1a1aa",
               maxWidth: 360,
-              textAlign: "justify",
             }}
           >
-            Onze prix de l'industrie en cinq ans. Nous sommes fiers de cette
-            reconnaissance, mais plus fiers que les clients reviennent.
+            Des projets web, mobiles et full-stack menés de bout en bout, du
+            besoin métier jusqu'au déploiement.
           </p>
         </Fade>
 
@@ -57,9 +56,9 @@ export function Awards() {
             overflow: "hidden",
           }}
         >
-          {AWARDS.map((award, i) => (
-            <Fade key={award.title} delay={i * 60}>
-              <AwardCard award={award} />
+          {HIGHLIGHTS.map((item, i) => (
+            <Fade key={item.title} delay={i * 60} className="h-full">
+              <AwardCard item={item} />
             </Fade>
           ))}
         </div>

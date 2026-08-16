@@ -14,7 +14,7 @@ export function Process() {
       <div className="px-6 md:px-20 max-w-[1440px] mx-auto">
         <Fade className="text-center mb-20">
           <Label color="#b6c4ff" center>
-            Notre Méthode
+            Ma Méthode
           </Label>
           <h2
             style={{

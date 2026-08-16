@@ -30,7 +30,6 @@ export function CTABand() {
             margin: "0 auto",
           }}
         >
-          {/* Glow */}
           <div
             style={{
               position: "absolute",

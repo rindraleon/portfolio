@@ -10,16 +10,34 @@ import { CONTACT_INFO } from "@/data"
 
 import emailjs from "@emailjs/browser"
 
+const FIELD_STYLE: React.CSSProperties = {
+  width: "100%",
+  background: "transparent",
+  border: "none",
+  borderBottom: "1px solid rgba(255,255,255,0.15)",
+  paddingBottom: 12,
+  fontFamily: "Inter, sans-serif",
+  fontSize: 15,
+  color: "#e5e2e1",
+  outline: "none",
+  transition: "border-color 0.3s",
+}
+
+function focusField(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) {
+  e.currentTarget.style.borderBottomColor = "#0055ff"
+}
+
+function blurField(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) {
+  e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.15)"
+}
+
 export function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" })
-
   const [submitted, setSubmitted] = useState(false)
-
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-
     setIsSubmitting(true)
 
     try {
@@ -27,34 +45,29 @@ export function Contact() {
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
-      console.log("Configuration EmailJS:", { serviceId, templateId, publicKey: publicKey ? "***" : "manquant" })
-
       if (!serviceId || !templateId || !publicKey) {
-        throw new Error("EmailJS n'est pas configuré. Vérifiez vos variables d'environnement.")
+        throw new Error(
+          "EmailJS n'est pas configuré. Vérifiez vos variables d'environnement.",
+        )
       }
 
-      const templateParams = {
-        from_name: form.name,
-        from_email: form.email,
-        message: form.message,
-      }
-
-      console.log("Envoi du formulaire avec les paramètres:", templateParams)
-
-      const result = await emailjs.send(
+      await emailjs.send(
         serviceId,
         templateId,
-        templateParams,
-        publicKey
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+        },
+        publicKey,
       )
 
-      console.log("Email envoyé avec succès:", result)
       setSubmitted(true)
       setForm({ name: "", email: "", message: "" })
     } catch (error) {
-      console.error("Erreur d'envoi du formulaire :", error)
-      const errorMessage = error instanceof Error ? error.message : "Erreur inconnue"
-      alert(`Le message n'a pas pu être envoyé.\n\nDétails: ${errorMessage}\n\nVeuillez vérifier la console pour plus d'informations.`)
+      const errorMessage =
+        error instanceof Error ? error.message : "Erreur inconnue"
+      alert(`Le message n'a pas pu être envoyé.\n\n${errorMessage}`)
     } finally {
       setIsSubmitting(false)
     }
@@ -99,13 +112,12 @@ export function Contact() {
                   color: "#a1a1aa",
                   maxWidth: 360,
                   marginBottom: 48,
-                  textAlign: "justify",
                 }}
               >
                 Disponible pour des projets de développement web et mobile.
                 N'hésitez pas à me contacter pour discuter de votre projet.
               </p>
-              {CONTACT_INFO.map(({ label, value }) => (
+              {CONTACT_INFO.map(({ label, value, href }) => (
                 <div
                   key={label}
                   style={{
@@ -127,15 +139,36 @@ export function Contact() {
                   >
                     {label}
                   </div>
-                  <div
-                    style={{
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: 14,
-                      color: "#e5e2e1",
-                    }}
-                  >
-                    {value}
-                  </div>
+                  {href ? (
+                    <a
+                      href={href}
+                      style={{
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: 14,
+                        color: "#e5e2e1",
+                        textDecoration: "none",
+                        transition: "color 0.2s ease",
+                      }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.color = "#b6c4ff")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.color = "#e5e2e1")
+                      }
+                    >
+                      {value}
+                    </a>
+                  ) : (
+                    <div
+                      style={{
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: 14,
+                        color: "#e5e2e1",
+                      }}
+                    >
+                      {value}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -179,7 +212,6 @@ export function Contact() {
                     fontWeight: 600,
                     fontSize: 26,
                     color: "#fff",
-                    textAlign: "justify",
                   }}
                 >
                   Message reçu.
@@ -189,10 +221,9 @@ export function Contact() {
                     fontFamily: "Inter, sans-serif",
                     fontSize: 15,
                     color: "#a1a1aa",
-                    textAlign: "justify",
                   }}
                 >
-                  Nous vous contacterons dans les deux jours ouvrables.
+                  Je vous recontacterai dans les plus brefs délais.
                 </p>
               </div>
             ) : (
@@ -205,14 +236,13 @@ export function Contact() {
                     id: "name",
                     label: "Votre Nom",
                     type: "text",
-                    placeholder: "Elena Voss",
+                    placeholder: "Jean Dupont",
                   },
-
                   {
                     id: "email",
                     label: "Adresse Email",
                     type: "email",
-                    placeholder: "elena@studio.co",
+                    placeholder: "vous@exemple.com",
                   },
                 ].map(({ id, label, type, placeholder }) => (
                   <div key={id}>
@@ -227,7 +257,6 @@ export function Contact() {
                         color: "#434656",
                         display: "block",
                         marginBottom: 10,
-                        textAlign: "justify",
                       }}
                     >
                       {label}
@@ -237,32 +266,13 @@ export function Contact() {
                       type={type}
                       placeholder={placeholder}
                       required
-                      value={form[(id as keyof typeof form)]}
+                      value={form[id as keyof typeof form]}
                       onChange={(e) =>
                         setForm({ ...form, [id]: e.target.value })
                       }
-                      style={{
-                        width: "100%",
-                        background: "transparent",
-                        border: "none",
-                        borderBottom: "1px solid rgba(255,255,255,0.15)",
-                        paddingBottom: 12,
-                        fontFamily: "Inter, sans-serif",
-                        fontSize: 15,
-                        color: "#e5e2e1",
-                        outline: "none",
-                        transition: "border-color 0.3s",
-                        textAlign: "justify",
-                      }}
-                      onFocus={(e) => (
-                        (e.currentTarget.style.borderBottomWidth = "2px"),
-                        (e.currentTarget.style.borderBottomColor = "#0055ff")
-                      )}
-                      onBlur={(e) => (
-                        (e.currentTarget.style.borderBottomWidth = "1px"),
-                        (e.currentTarget.style.borderBottomColor =
-                          "rgba(255,255,255,0.15)")
-                      )}
+                      style={FIELD_STYLE}
+                      onFocus={focusField}
+                      onBlur={blurField}
                     />
                   </div>
                 ))}
@@ -278,43 +288,22 @@ export function Contact() {
                       color: "#434656",
                       display: "block",
                       marginBottom: 10,
-                      textAlign: "justify",
                     }}
                   >
-                    Parlez-nous de Votre Projet
+                    Parlez-moi de Votre Projet
                   </label>
                   <textarea
                     id="message"
                     rows={5}
-                    placeholder="Nous redéfinissons l'identité d'un cabinet d'architecture de 40 ans..."
+                    placeholder="Décrivez votre projet, vos objectifs et vos délais..."
                     required
                     value={form.message}
                     onChange={(e) =>
                       setForm({ ...form, message: e.target.value })
                     }
-                    style={{
-                      width: "100%",
-                      background: "transparent",
-                      border: "none",
-                      borderBottom: "1px solid rgba(255,255,255,0.15)",
-                      paddingBottom: 12,
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: 15,
-                      color: "#e5e2e1",
-                      outline: "none",
-                      resize: "none",
-                      transition: "border-color 0.3s",
-                      textAlign: "justify",
-                    }}
-                    onFocus={(e) => (
-                      (e.currentTarget.style.borderBottomWidth = "2px"),
-                      (e.currentTarget.style.borderBottomColor = "#0055ff")
-                    )}
-                    onBlur={(e) => (
-                      (e.currentTarget.style.borderBottomWidth = "1px"),
-                      (e.currentTarget.style.borderBottomColor =
-                        "rgba(255,255,255,0.15)")
-                    )}
+                    style={{ ...FIELD_STYLE, resize: "none" }}
+                    onFocus={focusField}
+                    onBlur={blurField}
                   />
                 </div>
                 <div>

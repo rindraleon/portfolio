@@ -1,4 +1,4 @@
-import { defineConfig, type Plugin } from "vite"
+import { defineConfig } from "vite"
 
 import react from "@vitejs/plugin-react"
 
@@ -6,10 +6,10 @@ import tailwindcss from "@tailwindcss/vite"
 
 import path from "node:path"
 
-// Vite config — https://vitejs.dev/config/
-
 export default defineConfig(() => {
   return {
+    base: "/portfolio/",
+
     build: {
       sourcemap: false,
 
@@ -34,6 +34,8 @@ export default defineConfig(() => {
       port: parseInt(process.env.PORT || "3000"),
 
       strictPort: true,
+
+      allowedHosts: true as const,
     },
 
     preview: {

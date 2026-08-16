@@ -1,4 +1,4 @@
-import { useFadeIn } from "@/hooks"
+import { useFadeIn, usePrefersReducedMotion } from "@/hooks"
 
 export function Fade({
   children,
@@ -12,18 +12,18 @@ export function Fade({
   style?: React.CSSProperties
 }) {
   const { ref, visible } = useFadeIn()
+  const reduced = usePrefersReducedMotion()
 
   return (
     <div
       ref={ref}
       className={className}
       style={{
-        opacity: visible ? 1 : 0,
-
-        transform: visible ? "translateY(0)" : "translateY(32px)",
-
-        transition: `opacity 0.7s ease ${delay}ms, transform 0.7s ease ${delay}ms`,
-
+        opacity: reduced || visible ? 1 : 0,
+        transform: reduced || visible ? "translateY(0)" : "translateY(32px)",
+        transition: reduced
+          ? "none"
+          : `opacity 0.7s ease ${delay}ms, transform 0.7s ease ${delay}ms`,
         ...style,
       }}
     >

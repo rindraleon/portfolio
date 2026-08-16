@@ -1,9 +1,9 @@
 import { useState } from "react"
 
 export function AwardCard({
-  award,
+  item,
 }: {
-  award: { title: string cat: string year: string }
+  item: { title: string; cat: string }
 }) {
   const [hovered, setHovered] = useState(false)
 
@@ -13,16 +13,24 @@ export function AwardCard({
       onMouseLeave={() => setHovered(false)}
       style={{
         padding: "32px 28px",
-
         background: hovered ? "rgba(182,196,255,0.04)" : "rgba(10,10,10,0.8)",
-
         borderRight: "1px solid rgba(255,255,255,0.05)",
-
         transition: "background 0.35s ease",
-
-        cursor: "default",
+        height: "100%",
       }}
     >
+      <div
+        style={{
+          fontFamily: '"Playfair Display", serif',
+          fontWeight: 700,
+          fontSize: "clamp(24px,2.6vw,34px)",
+          color: "#fff",
+          lineHeight: 1.2,
+          marginBottom: 8,
+        }}
+      >
+        {item.title}
+      </div>
       <div
         style={{
           fontFamily: "Inter, sans-serif",
@@ -30,35 +38,11 @@ export function AwardCard({
           fontWeight: 600,
           letterSpacing: "0.2em",
           textTransform: "uppercase",
-          color: hovered ? "#b6c4ff" : "#434656",
-          marginBottom: 12,
+          color: hovered ? "#b6c4ff" : "#a1a1aa",
           transition: "color 0.3s",
         }}
       >
-        {award.year}
-      </div>
-      <div
-        style={{
-          fontFamily: '"Playfair Display", serif',
-          fontWeight: 600,
-          fontSize: 20,
-          color: "#e5e2e1",
-          lineHeight: 1.3,
-          marginBottom: 8,
-          textAlign: "justify",
-        }}
-      >
-        {award.title}
-      </div>
-      <div
-        style={{
-          fontFamily: "Inter, sans-serif",
-          fontSize: 13,
-          color: "#a1a1aa",
-          textAlign: "justify",
-        }}
-      >
-        {award.cat}
+        {item.cat}
       </div>
     </div>
   )

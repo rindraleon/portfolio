@@ -8,7 +8,7 @@ import { TEAM } from "@/data"
 
 export function Studio() {
   return (
-    <section id="studio" style={{ padding: "clamp(80px,10vw,160px) 0" }}>
+    <section id="a-propos" style={{ padding: "clamp(80px,10vw,160px) 0" }}>
       <div className="px-6 md:px-20 max-w-[1440px] mx-auto">
         <div
           style={{
@@ -18,10 +18,9 @@ export function Studio() {
             alignItems: "center",
           }}
         >
-          {/* Text */}
           <div className="col-span-12 md:col-span-9">
             <Fade delay={100}>
-              <Label color="#b6c4ff">Le Studio</Label>
+              <Label color="#b6c4ff">À propos</Label>
               <h2
                 style={{
                   fontFamily: '"Playfair Display", serif',
@@ -86,7 +85,6 @@ export function Studio() {
             </Fade>
           </div>
 
-          {/* Image */}
           <Fade className="col-span-12 md:col-span-3">
             <div style={{ position: "relative" }}>
               <div
@@ -99,7 +97,9 @@ export function Studio() {
               >
                 <img
                   src="https://raw.githubusercontent.com/rindraleon/profil/main/portfolio.png"
-                  alt="Profil"
+                  alt="Portrait de Rindra Léon"
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     width: "100%",
                     height: "100%",
@@ -125,7 +125,6 @@ export function Studio() {
                   }}
                 />
               </div>
-              {/* Floating glass stat */}
               <div
                 style={{
                   position: "absolute",

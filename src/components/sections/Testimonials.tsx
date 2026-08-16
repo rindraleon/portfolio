@@ -44,7 +44,6 @@ export function Testimonials() {
         </Fade>
 
         <div style={{ maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
-          {/* Quote */}
           <div
             style={{
               minHeight: 160,
@@ -73,7 +72,6 @@ export function Testimonials() {
             </blockquote>
           </div>
 
-          {/* Author */}
           <div
             style={{
               display: "flex",
@@ -86,6 +84,10 @@ export function Testimonials() {
             <img
               src={current.img}
               alt={current.author}
+              loading="lazy"
+              decoding="async"
+              width={56}
+              height={56}
               style={{
                 width: 56,
                 height: 56,
@@ -122,7 +124,6 @@ export function Testimonials() {
             </div>
           </div>
 
-          {/* Dots */}
           <div
             style={{
               display: "flex",

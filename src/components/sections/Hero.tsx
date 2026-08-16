@@ -1,31 +1,32 @@
-import { useState, useEffect } from "react"
-
-import { useScrollY } from "@/hooks"
+import { useEffect, useState } from "react"
 
 import { HERO_STATS } from "@/data"
+
+import { usePrefersReducedMotion, useScrollY } from "@/hooks"
 
 import { PrimaryButton, GhostButton, ArrowRight } from "@/components/ui/Buttons"
 
 export function Hero() {
   const [phase, setPhase] = useState(0)
+  const reduced = usePrefersReducedMotion()
 
   useEffect(() => {
+    if (reduced) {
+      setPhase(3)
+      return
+    }
     const t1 = setTimeout(() => setPhase(1), 120)
-
     const t2 = setTimeout(() => setPhase(2), 400)
-
     const t3 = setTimeout(() => setPhase(3), 700)
-
     return () => {
       clearTimeout(t1)
       clearTimeout(t2)
       clearTimeout(t3)
     }
-  }, [])
+  }, [reduced])
 
   const scrollY = useScrollY()
-
-  const parallax = scrollY * 0.3
+  const parallax = reduced ? 0 : scrollY * 0.3
 
   return (
     <section className="relative min-h-screen flex flex-col justify-end pb-20 md:pb-28 overflow-hidden">
@@ -38,7 +39,9 @@ export function Hero() {
       >
         <img
           src="https://images.unsplash.com/photo-1558627563-3e383cddc94a?w=1920&h=1200&fit=crop&auto=format"
-          alt="Abstract dark urban architecture at night"
+          alt="Architecture sombre abstraite de nuit"
+          fetchPriority="high"
+          decoding="async"
           className="w-full h-full object-cover"
           style={{
             filter: "brightness(0.3) saturate(0.55)",
@@ -54,7 +57,6 @@ export function Hero() {
         />
       </div>
 
-      {/* Ambient glows */}
       <div className="absolute inset-0 pointer-events-none">
         <div
           style={{
@@ -85,18 +87,17 @@ export function Hero() {
       </div>
 
       <div className="relative px-6 md:px-20 max-w-[1440px] mx-auto w-full">
-        {/* Eyebrow */}
         <div
-          className="flex items-center gap-3 mb-8 transition-all duration-700"
+          className="flex items-center gap-3 mb-8"
           style={{
             opacity: phase >= 1 ? 1 : 0,
             transform: phase >= 1 ? "none" : "translateY(16px)",
+            transition: reduced ? "none" : "all 0.7s ease",
           }}
         >
           <span className="w-8 h-px" style={{ background: "#b6c4ff" }} />
           <span
             style={{
-              fontFamily: "Inter, sans-serif",
               fontSize: "11px",
               fontWeight: 600,
               letterSpacing: "0.24em",
@@ -104,28 +105,22 @@ export function Hero() {
               color: "#b6c4ff",
             }}
           >
-            Développeur Full Stack
+            Développeur Frontend & Full-stack
           </span>
         </div>
 
-        {/* Headline */}
         <h1
-          className="text-white font-bold leading-none mb-8 transition-all duration-700"
+          className="text-white font-bold leading-none mb-8"
           style={{
             fontFamily: '"Playfair Display", Georgia, serif',
-
             fontSize: "clamp(52px, 8.5vw, 100px)",
-
             letterSpacing: "-0.02em",
-
             opacity: phase >= 2 ? 1 : 0,
-
             transform: phase >= 2 ? "none" : "translateY(24px)",
-
-            transitionDelay: "80ms",
+            transition: reduced ? "none" : "all 0.7s ease 80ms",
           }}
         >
-          Nous concevons
+          Bonjour, je suis
           <br />
           <em
             className="not-italic"
@@ -137,50 +132,46 @@ export function Hero() {
               backgroundClip: "text",
             }}
           >
-            la présence.
+            Rindra Léon.
           </em>
         </h1>
 
-        {/* Body + CTAs */}
         <div
-          className="flex flex-col md:flex-row md:items-end gap-8 md:gap-16 transition-all duration-700"
+          className="flex flex-col md:flex-row md:items-end gap-8 md:gap-16"
           style={{
             opacity: phase >= 3 ? 1 : 0,
             transform: phase >= 3 ? "none" : "translateY(16px)",
-            transitionDelay: "80ms",
+            transition: reduced ? "none" : "all 0.7s ease 80ms",
           }}
         >
           <p
             style={{
-              fontFamily: "Inter, sans-serif",
               fontSize: "18px",
               lineHeight: 1.6,
               letterSpacing: "0.01em",
               color: "#a1a1aa",
-              maxWidth: 420,
-              textAlign: "justify",
+              maxWidth: 460,
             }}
           >
-            Développeur passionné spécialisé dans la création d'applications web
-            et mobiles. Je transforme vos idées en solutions numériques
-            performantes.
+            Je conçois des applications web et mobiles performantes avec
+            TypeScript, React et Angular. Je transforme vos idées en solutions
+            numériques concrètes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <PrimaryButton href="#work">
+            <PrimaryButton href="#projets">
               Voir les Projets
               <ArrowRight />
             </PrimaryButton>
-            <GhostButton href="#studio">Notre Studio</GhostButton>
+            <GhostButton href="#a-propos">À propos de moi</GhostButton>
           </div>
         </div>
 
-        {/* Stats */}
         <div
-          className="flex flex-wrap gap-10 mt-20 pt-10 transition-all duration-700"
+          className="flex flex-wrap gap-10 mt-20 pt-10"
           style={{
             borderTop: "1px solid rgba(255,255,255,0.07)",
             opacity: phase >= 3 ? 1 : 0,
-            transitionDelay: "200ms",
+            transition: reduced ? "none" : "opacity 0.7s ease 200ms",
           }}
         >
           {HERO_STATS.map(({ val, label }) => (
@@ -197,7 +188,6 @@ export function Hero() {
               </div>
               <div
                 style={{
-                  fontFamily: "Inter, sans-serif",
                   fontSize: 11,
                   fontWeight: 600,
                   letterSpacing: "0.2em",

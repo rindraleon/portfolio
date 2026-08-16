@@ -3,7 +3,7 @@ import { useState } from "react"
 export function ProcessCard({
   step,
 }: {
-  step: { num: string title: string desc: string }
+  step: { num: string; title: string; desc: string }
 }) {
   const [hovered, setHovered] = useState(false)
 

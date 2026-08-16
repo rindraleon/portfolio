@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export function TeamRow({ name, role }: { name: string role: string }) {
+export function TeamRow({ name, role }: { name: string; role: string }) {
   const [hovered, setHovered] = useState(false)
 
   return (
